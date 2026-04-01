@@ -14,7 +14,7 @@ remote-management:
 
 auth-dir: "~/.cli-proxy-api"
 api-keys:
-  - "ssfnxk-railway-key"
+  - "sk-ssfnxk-railway-key"
 
 debug: false
 pprof:
@@ -85,6 +85,10 @@ openai-compatibility:
     api-key-entries:
       - api-key: "replace-with-your-openai-api-key"
     models:
+      - name: "gpt-5.4"
+        alias: "gpt-5.4"
+      - name: "gpt-5.4-mini"
+        alias: "gpt-5.4-mini"
       - name: "gpt-4.1-mini"
         alias: "openai-gpt41-mini"
       - name: "gpt-4o-mini"

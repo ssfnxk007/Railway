@@ -16,7 +16,7 @@ auth-dir: "~/.cli-proxy-api"
 
 # 这是客户端访问你代理时使用的鉴权 key。
 api-keys:
-  - "replace-with-your-client-api-key"
+  - "sk-replace-with-your-client-api-key"
 
 debug: false
 pprof:
@@ -91,6 +91,10 @@ openai-compatibility:
     api-key-entries:
       - api-key: "replace-with-your-openai-api-key"
     models:
+      - name: "gpt-5.4"
+        alias: "gpt-5.4"
+      - name: "gpt-5.4-mini"
+        alias: "gpt-5.4-mini"
       - name: "gpt-4.1-mini"
         alias: "openai-gpt41-mini"
       - name: "gpt-4o-mini"
