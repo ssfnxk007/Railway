@@ -1,0 +1,123 @@
+host: ""
+port: 8317
+
+tls:
+  enable: false
+  cert: ""
+  key: ""
+
+remote-management:
+  allow-remote: false
+  secret-key: ""
+  disable-control-panel: false
+  panel-github-repository: "https://github.com/router-for-me/Cli-Proxy-API-Management-Center"
+
+auth-dir: "~/.cli-proxy-api"
+
+# 这是客户端访问你代理时使用的鉴权 key。
+api-keys:
+  - "replace-with-your-client-api-key"
+
+debug: false
+pprof:
+  enable: false
+  addr: "127.0.0.1:8316"
+
+commercial-mode: false
+logging-to-file: false
+logs-max-total-size-mb: 0
+error-logs-max-files: 10
+usage-statistics-enabled: false
+
+proxy-url: ""
+force-model-prefix: false
+passthrough-headers: false
+request-retry: 3
+max-retry-credentials: 0
+max-retry-interval: 30
+
+quota-exceeded:
+  switch-project: true
+  switch-preview-model: true
+
+routing:
+  strategy: "round-robin"
+
+ws-auth: false
+nonstream-keepalive-interval: 0
+
+# Gemini 原生 API
+gemini-api-key:
+  - api-key: "replace-with-your-gemini-api-key"
+    prefix: "gemini"
+    base-url: "https://generativelanguage.googleapis.com"
+    headers: {}
+    models:
+      - name: "gemini-2.5-flash"
+        alias: "gemini-flash"
+      - name: "gemini-2.5-pro"
+        alias: "gemini-pro"
+
+# Codex / OpenAI Responses 兼容上游
+codex-api-key:
+  - api-key: "replace-with-your-codex-api-key"
+    prefix: "codex"
+    base-url: "https://api.openai.com"
+    headers: {}
+    models:
+      - name: "gpt-5-codex"
+        alias: "codex"
+      - name: "gpt-5"
+        alias: "gpt5"
+
+# Claude 原生或兼容上游
+claude-api-key:
+  - api-key: "replace-with-your-claude-api-key"
+    prefix: "claude"
+    base-url: "https://api.anthropic.com"
+    headers: {}
+    models:
+      - name: "claude-sonnet-4-5-20250929"
+        alias: "claude-sonnet"
+      - name: "claude-opus-4-1-20250805"
+        alias: "claude-opus"
+
+# OpenAI 兼容接口，适合 OpenAI / OpenRouter / 其他中转平台
+openai-compatibility:
+  - name: "openai"
+    prefix: "openai"
+    base-url: "https://api.openai.com/v1"
+    headers: {}
+    api-key-entries:
+      - api-key: "replace-with-your-openai-api-key"
+    models:
+      - name: "gpt-4.1-mini"
+        alias: "openai-gpt41-mini"
+      - name: "gpt-4o-mini"
+        alias: "openai-gpt4o-mini"
+
+  - name: "openrouter"
+    prefix: "openrouter"
+    base-url: "https://openrouter.ai/api/v1"
+    headers:
+      HTTP-Referer: "https://railway.app"
+      X-Title: "CLIProxyAPI"
+    api-key-entries:
+      - api-key: "replace-with-your-openrouter-api-key"
+    models:
+      - name: "openai/gpt-4.1-mini"
+        alias: "or-gpt41-mini"
+      - name: "anthropic/claude-3.7-sonnet"
+        alias: "or-claude-sonnet"
+      - name: "google/gemini-2.5-pro"
+        alias: "or-gemini-pro"
+
+  - name: "custom-openai-compatible"
+    prefix: "custom"
+    base-url: "https://your-openai-compatible.example.com/v1"
+    headers: {}
+    api-key-entries:
+      - api-key: "replace-with-your-custom-provider-api-key"
+    models:
+      - name: "your-upstream-model-name"
+        alias: "custom-model"
