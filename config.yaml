@@ -14,7 +14,7 @@ remote-management:
 
 auth-dir: "~/.cli-proxy-api"
 api-keys:
-  - "sk-ssfnxk-railway-key"
+  - "ssfnxk-railway-key"
 
 debug: false
 pprof:

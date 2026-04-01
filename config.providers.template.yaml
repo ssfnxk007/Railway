@@ -16,7 +16,7 @@ auth-dir: "~/.cli-proxy-api"
 
 # 这是客户端访问你代理时使用的鉴权 key。
 api-keys:
-  - "sk-replace-with-your-client-api-key"
+  - "replace-with-your-client-api-key"
 
 debug: false
 pprof:
