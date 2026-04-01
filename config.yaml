@@ -43,3 +43,75 @@ routing:
 
 ws-auth: false
 nonstream-keepalive-interval: 0
+
+gemini-api-key:
+  - api-key: "replace-with-your-gemini-api-key"
+    prefix: "gemini"
+    base-url: "https://generativelanguage.googleapis.com"
+    headers: {}
+    models:
+      - name: "gemini-2.5-flash"
+        alias: "gemini-flash"
+      - name: "gemini-2.5-pro"
+        alias: "gemini-pro"
+
+codex-api-key:
+  - api-key: "replace-with-your-codex-api-key"
+    prefix: "codex"
+    base-url: "https://api.openai.com"
+    headers: {}
+    models:
+      - name: "gpt-5-codex"
+        alias: "codex"
+      - name: "gpt-5"
+        alias: "gpt5"
+
+claude-api-key:
+  - api-key: "replace-with-your-claude-api-key"
+    prefix: "claude"
+    base-url: "https://api.anthropic.com"
+    headers: {}
+    models:
+      - name: "claude-sonnet-4-5-20250929"
+        alias: "claude-sonnet"
+      - name: "claude-opus-4-1-20250805"
+        alias: "claude-opus"
+
+openai-compatibility:
+  - name: "openai"
+    prefix: "openai"
+    base-url: "https://api.openai.com/v1"
+    headers: {}
+    api-key-entries:
+      - api-key: "replace-with-your-openai-api-key"
+    models:
+      - name: "gpt-4.1-mini"
+        alias: "openai-gpt41-mini"
+      - name: "gpt-4o-mini"
+        alias: "openai-gpt4o-mini"
+
+  - name: "openrouter"
+    prefix: "openrouter"
+    base-url: "https://openrouter.ai/api/v1"
+    headers:
+      HTTP-Referer: "https://railway.app"
+      X-Title: "CLIProxyAPI"
+    api-key-entries:
+      - api-key: "replace-with-your-openrouter-api-key"
+    models:
+      - name: "openai/gpt-4.1-mini"
+        alias: "or-gpt41-mini"
+      - name: "anthropic/claude-3.7-sonnet"
+        alias: "or-claude-sonnet"
+      - name: "google/gemini-2.5-pro"
+        alias: "or-gemini-pro"
+
+  - name: "custom-openai-compatible"
+    prefix: "custom"
+    base-url: "https://your-openai-compatible.example.com/v1"
+    headers: {}
+    api-key-entries:
+      - api-key: "replace-with-your-custom-provider-api-key"
+    models:
+      - name: "your-upstream-model-name"
+        alias: "custom-model"
