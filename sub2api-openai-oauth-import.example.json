@@ -1,0 +1,20 @@
+{
+  "data": {
+    "proxies": [],
+    "accounts": [
+      {
+        "name": "openai-oauth-1",
+        "platform": "openai",
+        "type": "oauth",
+        "notes": "Converted from account register JSON",
+        "credentials": {
+          "email": "replace-with-email@example.com",
+          "access_token": "replace-with-access-token",
+          "refresh_token": "replace-with-refresh-token",
+          "id_token": "replace-with-id-token",
+          "expires_at": "2026-04-11T04:46:49Z"
+        }
+      }
+    ]
+  }
+}
